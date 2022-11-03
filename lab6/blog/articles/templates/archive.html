@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Архив статей</title>
+        <link rel="stylesheet" href="{% static 'css/article.css' %}" />
+    </head>
+</html>
+<body>
+    
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.svg/1200px-%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.svg.png" alt="Эмблема" width="50" height="50" />
+        <h3 style="text-align: center; "> 
+            <a href="http://127.0.0.1:8000/article/new" style="color:rgb(255, 255, 255)" >ДОБАВИТЬ НОВУЮ СТАТЬЮ </a> 
+        </h3>
+    </div>
+    <div style="text-align: center;">
+        <a href="/login" style="color:rgb(255, 255, 255)">Авторизация</a>
+        <a href="/register" style="color:rgb(255, 255, 255)">Регистрация</a>
+        <a href="/deauth" style="color:rgb(255, 255, 255)">Выйти</a>
+    </div>
+    {% if messages %}
+    {% for message in messages %}
+    <div role="alert" style="color: rgb(171, 72, 50); text-align: center;">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    
+    
+
+    <div class="archive">
+        {% for post in posts %}
+            <div class="one-post">
+                <h2 class="post-title">
+                    <a href="http://127.0.0.1:8000/article/{{ post.id }}/"> {{ post.title }} </a>
+                </h2>
+                <div class="article-info">
+                <div class="article-author">{{ post.author.username }}</div>
+                <div class="article-created-date">{{ post.created_date }}</div>
+                </div>
+                <p class="article-text">{{ post.get_excerpt }}</p>
+            </div> 
+        {% endfor %}          
+    </div>    
+</body>
