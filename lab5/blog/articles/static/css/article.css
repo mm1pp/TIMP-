@@ -1,0 +1,48 @@
+body {
+    height: 100%;
+    background: linear-gradient(to top right, #33ccff 0%, #ff99cc 100%) fixed;
+    font-family: Tahoma, Arial, sans-serif; 
+    color: #ffffff;
+    font-size: 20px;
+
+}
+
+.header img {
+    display: block; 
+    width: 50px; 
+    margin-left: auto; 
+    margin-right: auto;
+    float: center;
+}
+    
+.archive {
+    width: 960px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-title a{
+    color: #ffffff;
+}
+
+.article-author { 
+    width: 50%; 
+    float: left;
+    font-weight: bold;
+}
+.article-created-date { 
+    text-align: right;
+}
+
+.content {
+    text-align: center ;
+    font-size: 30px;
+    
+}
+
+.content input{
+    width: 150px; 
+    height: 50px;
+}
+    
+    
