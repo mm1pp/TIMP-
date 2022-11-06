@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Архив статей по ссылке</title>
+        <link rel="stylesheet" href="{% static 'css/article.css' %}" />
+    </head>
+</html>
+<body>
+    <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.svg/1200px-%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.svg.png" alt="Эмблема" width="50" height="50" style="float: center;" /> 
+        <h2 style="float:right;"> <a href="http://127.0.0.1:8000/" style="color:rgb(255, 255, 255)" >ВСЕ ЗАПИСИ</a> </h2>
+    </div>
+    <div class="archive"
+    style="
+    -webkit-box-shadow: 0px 4px 8px 19px rgba(34, 60, 80, 0.18);
+    -moz-box-shadow: 0px 4px 8px 19px rgba(34, 60, 80, 0.18);
+    box-shadow: 0px 4px 8px 19px rgba(34, 60, 80, 0.18);
+    border-radius:15px;
+    "
+    >
+            <div class="one-post">
+                <h2 class="post-title">{{ post.title }}</h2>
+                <div class="article-info">
+                    <div class="article-author">{{ post.author.username }}</div>
+                    <div class="article-created-date">{{ post.created_date }}</div>
+                </div>
+                <p> {{ post.text }} </p>
+            </div>  
+    </div>   
+</body>

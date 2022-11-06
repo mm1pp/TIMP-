@@ -1,0 +1,90 @@
+body {
+    height: 100%;
+    background: linear-gradient(to top right, #ff9900 0%, #9900ff 100%) fixed;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+
+}
+
+.header img {
+    display: block;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    float: center;
+}
+
+.archive {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-title a {
+    color: #ffffff;
+}
+
+.article-author {
+    width: 50%;
+    float: left;
+    font-weight: bold;
+}
+
+.article-created-date {
+    text-align: right;
+}
+
+.content {
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.content input {
+    width: 150px;
+    height: 50px;
+}
+
+.fold-button {
+    float: right;
+    font-size: 17px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.one-post.folded .article-author {
+    /* данный стиль применится только для элементов класса
+    .article-author, у которых родитель с классом one-post имеет также класс folded */
+    display: none;
+}
+
+.one-post.folded .article-info {
+    /* данный стиль применится только для элементов класса
+    .article-author, у которых родитель с классом one-post имеет также класс folded */
+    display: none;
+}
+
+.one-post.folded .article-text {
+    /* данный стиль применится только для элементов класса
+    .article-author, у которых родитель с классом one-post имеет также класс folded */
+    display: none;
+}
+
+.one-post .article-author {
+    /* данный стиль применится только для элементов класса
+    .article-author, у которых родитель с классом one-post имеет также класс folded */
+    display: block;
+}
+
+.one-post .article-info {
+    /* данный стиль применится только для элементов класса
+    .article-author, у которых родитель с классом one-post имеет также класс folded */
+    display: block;
+}
+
+.one-post .article-text {
+    /* данный стиль применится только для элементов класса
+    .article-author, у которых родитель с классом one-post имеет также класс folded */
+    display: block;
+}
