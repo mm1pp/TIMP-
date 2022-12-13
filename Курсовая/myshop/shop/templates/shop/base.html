@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}My shop{% endblock %}</title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header">
+        <a href="/" class="logo">ShopForYou</a>
+    </div>
+    <hr id="subheader">
+    <p class="cart_base">
+        {% with total_items=cart|length %}
+        {% if cart|length > 0 %}
+       
+        <a href="{% url 'cart:cart_detail' %}" class="logo">
+            Корзина:
+            {{ total_items }}
+        </a>
+        ({{ cart.get_total_price }} руб)
+        {% else %}
+        Корзина пуста
+        {% endif %}
+        {% endwith %}
+    </p>
+    <hr>
+    {% block categories %}
+    <div id="categories">
+        <p style="text-align: center;">Категории</p>
+        <a href="/" class="category" style="text-align: center;"> Все категории </a>
+        {% for category in categories %}
+        <p>
+            <a href="/{{ category.slug }}/" class="category"> {{category.name }} </a>
+        </p>
+        {% endfor %}
+    </div>
+    {% endblock %}
+    <div id="content">
+        {% block content %}
+        {% for content in contents %}
+        <div class="product-wrap">
+            <div class="product-item">
+                <img
+                    src="{% if content.image %}{{ content.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
+                <div class="product-buttons">
+                    <a href="/{{ content.id }}/{{ content.slug }}/" class="button">В корзину</a>
+                </div>
+            </div>
+            <div class="product-title">
+                <a href="/{{ content.id }}/{{ content.slug }}/">{{content.name}}</a>
+                <span class="product-price">{{content.price}} руб</span>
+            </div>
+        </div>
+        {% endfor %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>
